@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>Addendum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    </link>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #8F6B6B;
+        }
+
+    </style>
+</head>
+
+<body class="flex items-center justify-center h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-1/2">
+        <div class="mt-4">
+            <p  class="text-lg text-gray-800">
+                <ul class="p-4 list-disc">
+                    <li>
+                        The website structure begins by hosting the 'index.html' at route 'itc505/lab7' upon server startup.
+                    </li>
+                    <li>
+                        Upon opening the site, users encounter a list of three stories, offering interactive options, along with an
+                        "Addendum" button placed on the right side.
+                    </li>
+                    <li>
+                        Clicking any story navigates users to an input page, prompting for six inputs. Each input is associated with
+                        dynamically changing labels based on the selected story.
+                    </li>
+                    <li>
+                        To facilitate this functionality, the game name is passed as a URL parameter from the index to the input page,
+                        enabling the retrieval of the game name and subsequent label customization.
+                    </li>
+                    <li>
+                        After collecting user inputs, clicking the "Go Mad" button results in storing all inputs and the game name within a
+                        JSON object named "data."
+                    </li>
+                    <li>
+                        The JSON data is shared with 'server.js' using the 'fetch' API. Error handling mechanisms are implemented to manage
+                        potential failures in data sharing.
+                    </li>
+                    <li>
+                        'server.js' utilizes JSON handling via 'express.json()', parsing post requests to retrieve inputs and the game name
+                        for further processing.
+                    </li>
+                    <li>
+                        Subsequently, conditional statements are used to segregate stories based on the game name. User inputs are
+                        dynamically integrated into the stories using string interpolation.
+                    </li>
+                    <li>
+                        The data is later transmitted to the story page via 'redirectUrl' encoded with 'encodeURIComponent'. The story HTML
+                        page decodes the story from the URL parameter using 'decodeURIComponent'.
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
